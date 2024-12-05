@@ -2,13 +2,13 @@
     <x-slot:heading>
         Job Details!
     </x-slot:heading>
-
-    @if($job)
+{{-- you can use this condition if you don't want use condition on job.php --}}
+    {{-- @if($job) --}}
         <ul>
             <h2 class="font-bold text-lime-700">{{ $job['title'] }}</h2>
             <p>{{ $job['salary'] }}</p>
         </ul>
-    @else
+    {{-- @else
         <p>Job not found.</p>
-    @endif
+    @endif --}}
 </x-layout>
