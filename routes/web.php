@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
 Route::get('/', function () {
-    return view('home', [
-        'greeting' => 'koeuk',
-        'name' => 'kos',
-    ]);
+    return view('home');
+    // $jobs = Job::all();
+
+    // dd($jobs[1]->salary ?? 'No job found');
 });
 // ----------------------------------------------------------------
-Route::get('/about', function () {
+Route::get('/about',    function () {
     return view('about');
 });
 // ----------------------------------------------------------------
@@ -31,6 +31,7 @@ Route::get('/jobs', function () {
 // ----------------------------------------------------------------
 
 Route::get('/jobs/{id}', function ($id) {
+    // dd($id);
     $job = Job::findByid($id);
     // Use Arr::first to find the job by id
     // $job = Arr::first(Job::all(), fn($job) => $job['id'] == $id);
