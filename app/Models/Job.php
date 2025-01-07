@@ -16,4 +16,14 @@ class Job extends Model
         'salary',
         'employer_id',
     ];
+
+    /**
+     * @var string
+     * 
+     * 
+     */
+
+    public function employer () {
+        return $this-> belongsTo(Employer::class);
+    }
 }

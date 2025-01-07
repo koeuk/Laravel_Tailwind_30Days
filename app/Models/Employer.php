@@ -14,4 +14,13 @@ class Employer extends Model
      */
     protected $table = 'employer';
     protected $fillable = ['name'];
+
+    /**
+     * Relationship to model Jobs
+     * 
+     * @var string
+     */
+    public function jobs() {
+        return $this->hasMany(Job::class);
+    }
 }
