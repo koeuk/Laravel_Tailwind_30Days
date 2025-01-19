@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\RegisteredController;
+use App\Http\Controllers\SesstionController;
 use Illuminate\Support\Facades\Route;
 
 // Get home
@@ -9,6 +11,14 @@ Route::view('/', 'home');
 Route::get('/jobs', [JobController::class, 'destroy']);
 // use resource for route can be index, create, store, edit, update, 
 Route::resource('jobs', JobController::class);
+
+// Auth
+
+Route::get('/register', [RegisteredController::class, 'create']);
+Route::post('/register', [RegisteredController::class, 'store']);
+
+Route::get('/login', [SesstionController::class, 'create']);
+Route::post('/login', [SesstionController::class, 'store']);
 
 // --------------------------------------------------------------------------
 
