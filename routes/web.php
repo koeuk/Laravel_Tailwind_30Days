@@ -20,6 +20,8 @@ Route::post('/register', [RegisteredController::class, 'store']);
 Route::get('/login', [SesstionController::class, 'create']);
 Route::post('/login', [SesstionController::class, 'store']);
 
+Route::post('/logout', [SesstionController::class, 'destroy']);
+
 // --------------------------------------------------------------------------
 
 // Route::controller(JobController::class)->group(function(){

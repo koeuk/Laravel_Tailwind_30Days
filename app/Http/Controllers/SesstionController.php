@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class SesstionController extends Controller
 {
@@ -27,7 +29,25 @@ class SesstionController extends Controller
      */
     public function store(Request $request)
     {
-        return (request()->all());
+        // return (request()->all());
+
+        // validation
+        $attributes = $request->validate([
+            'email'         => ['required', 'email'],
+            'password'      => ['required'],
+        ]);
+
+        // attampt login to the user
+        if (! Auth::attempt($attributes)) {
+            throw ValidationException::withMessages([
+                'email'   => 'The email is not match!'
+            ]);
+        };
+
+        // regenerate
+        request()->session()->regenerate();
+        return redirect('/jobs');
+
     }
 
     /**
@@ -57,8 +77,10 @@ class SesstionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
-        //
+        Auth::logout();
+
+        return redirect('/');
     }
 }
