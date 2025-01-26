@@ -3,6 +3,7 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredController;
 use App\Http\Controllers\SesstionController;
+use App\Models\Job;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +12,16 @@ use Illuminate\Support\Facades\Route;
 //     Illuminate\Support\Facades\Mail::to('Suly@gmail.com')->send(new App\Mail\JobPosted());
 //     return 'Email sent already';
 // });
+
+Route::get('test', function() {
+    // dispatch(function () {
+    //     logger('Test queue');
+    // });
+    $job = Job::first();
+
+    \App\Jobs\TranslateJob::dispatch($job);
+    return 'Email sent already';
+});
 
 // Get home
 Route::view('/', 'home');
