@@ -3,10 +3,17 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredController;
 use App\Http\Controllers\SesstionController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 // Get home
-// Route::view('/', 'home');
+Route::view('/', 'home');
+
+// Route::get('/test', function () {
+//     // return new App\Mail\JobPosted();
+//     Mail::to('koeukkos@gmail.com')->send(new App\Mail\JobPosted());
+//     return 'Email sent already';
+// });
 
 // Route::get('/jobs', [JobController::class, 'destroy']);
 // use resource for route can be index, create, store, edit, update, 
