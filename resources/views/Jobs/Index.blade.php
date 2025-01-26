@@ -9,7 +9,7 @@
                     {{$job->employer->name ?? 'No Employer'}}
                 </div>
                 <div>
-                <strong>{{ $job['title'] }} :</strong> Pay{{ $job['salary'] }} per year
+                <strong class="text-koeuk">{{ $job['title'] }} :</strong> Pay{{ $job['salary'] }} per year
             </div>
             </a>
         @endforeach

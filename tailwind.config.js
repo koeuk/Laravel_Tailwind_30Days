@@ -14,7 +14,36 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                "koeuk": '#3490dc',
+                secondary: '#ffcc00',
+                danger: '#e74c3c',
+                success: '#2ecc71',
+                warning: '#f1c40f',
+                info: '#34495e',
+                light: '#f7f9fa',
+                dark: '#343a40',
+            }
         },
     },
     plugins: [],
 };
+
+
+
+
+
+
+
+
+
+
+// import { defineConfig } from "vite";
+// import tailwindcss from "@tailwindcss/vite";
+// export default defineConfig({
+//     plugins: [
+//         tailwindcss(),
+//         // …
+//     ],
+// });
+
