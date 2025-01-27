@@ -14,7 +14,6 @@ class RegisteredController extends Controller
     }
 
     public function store() {
-        // dd("df");
         // return (request()->all());
         // validate
         $attributes = request()->validate([
